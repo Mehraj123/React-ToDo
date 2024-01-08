@@ -6,7 +6,7 @@ function BookList() {
   const { books } = useContext(BooksContext);
 
   if (books.length <= 0) {
-    return <div> Please add a book</div>;
+    return <h1> Please add a book</h1>;
   }
   const renderedBooks = books.map((book) => {
     return <BookShow key={book.id} book={book}></BookShow>;
