@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
+import BooksContext from "./contexts/books";
 
 function App() {
   const [books, setBooks] = useState([]);
-
+  const value = useContext(BooksContext);
+  console.log("value ->", value);
   const handleCreateBook = (title) => {
     const updatedBooks = [
       ...books,
