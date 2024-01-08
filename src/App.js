@@ -5,8 +5,7 @@ import BooksContext from "./contexts/books";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const value = useContext(BooksContext);
-  console.log("value ->", value);
+  const { count, incrementCount } = useContext(BooksContext);
   const handleCreateBook = (title) => {
     const updatedBooks = [
       ...books,
@@ -35,6 +34,8 @@ function App() {
 
   return (
     <div>
+      <span>{count}</span>
+      <button onClick={incrementCount}></button>
       <BookList
         books={books}
         onDelete={deleteById}
