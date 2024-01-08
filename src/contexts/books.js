@@ -5,6 +5,8 @@ const BooksContext = createContext();
 function Provider({ children }) {
   const [books, setBooks] = useState([]);
 
+  //console.log("state ", books);
+
   const createBook = (title) => {
     const updatedBooks = [
       ...books,
@@ -21,6 +23,7 @@ function Provider({ children }) {
   };
 
   const updateById = (id, newTitle) => {
+    //console.log("Updating Id : ", id, newTitle);
     const updatedBooks = books.map((book) => {
       if (id === book.id) {
         return { ...book, title: newTitle };
