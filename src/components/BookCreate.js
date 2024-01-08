@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import BooksContext from "../contexts/books";
 
-var log = console.log;
 function BookCreate() {
   const [title, setTitle] = useState("");
   const { createBook } = useContext(BooksContext);
