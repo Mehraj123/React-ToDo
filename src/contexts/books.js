@@ -21,7 +21,6 @@ function Provider({ children }) {
   };
 
   const updateById = (id, newTitle) => {
-    console.log("Updating ", newTitle);
     const updatedBooks = books.map((book) => {
       if (id === book.id) {
         return { ...book, title: newTitle };
