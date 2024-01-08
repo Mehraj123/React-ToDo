@@ -4,7 +4,7 @@ import BooksContext from "../contexts/books";
 var log = console.log;
 function BookCreate() {
   const [title, setTitle] = useState("");
-  const { handleCreateBook } = useContext(BooksContext);
+  const { createBook } = useContext(BooksContext);
 
   const handleChange = (event) => {
     setTitle(event.target.value);
@@ -14,7 +14,7 @@ function BookCreate() {
     event.preventDefault();
 
     if (title !== undefined && title !== "") {
-      handleCreateBook(title);
+      createBook(title);
       setTitle("");
     }
   };

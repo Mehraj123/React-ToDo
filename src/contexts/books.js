@@ -3,10 +3,9 @@ import { createContext, useState } from "react";
 const BooksContext = createContext();
 
 function Provider({ children }) {
-  const [count, setCount] = useState(1);
   const [books, setBooks] = useState([]);
 
-  const handleCreateBook = (title) => {
+  const createBook = (title) => {
     const updatedBooks = [
       ...books,
       { id: Math.round(Math.random() * 100), title },
@@ -33,12 +32,8 @@ function Provider({ children }) {
   };
 
   const valueToShare = {
-    count,
     books,
-    incrementCount: () => {
-      setCount(count + 1);
-    },
-    handleCreateBook,
+    createBook,
     deleteById,
     updateById,
   };
